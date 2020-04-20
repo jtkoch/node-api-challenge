@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', validateProject, async (req, res, next) => {
   try {
     const action = await actions.get(req.params.id)
     res.status(200).json(action)
