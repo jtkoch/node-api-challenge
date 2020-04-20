@@ -21,7 +21,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', validateProject, async (req, res, next) => {
   try {
     const action = await actions.insert(req.body)
     res.status(201).json(action)
@@ -47,6 +47,19 @@ router.delete('/:id', async (req, res, next) => {
     next(err)
   }
 })
+
+function validateProject(req, res, next) {
+  console.log(req.body.project_id)
+  projects.get(req.body.project_id).then((res) => {
+    if (res === null) {
+      res.status(400).json({
+        error: "Please enter a valid project id.",
+      })
+    } else {
+      next()
+    }
+  })
+}
 
 
 module.exports = router;
