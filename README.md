@@ -45,10 +45,10 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
   - Middleware functions have access to the req, res objects within the function and can be used to add a certain check usually used for some kind of verification within any function that is   specified. 
 
 - [x] Describe a Resource?
-  - An object that defines actions. 
+  - A resource would be a location where we get our data from that we use in our api's.
 
 - [x] What can the API return to help clients know if a request was successful?
-  - An API can return a helpful status code letting the client know that it was a success
+  - An API can return a helpful status code like status(200) that will let the client know that it was a success!
 
 - [x] How can we partition our application into sub-applications?
   - By using routers, breaking the backend data into multiple files making it easier to read.

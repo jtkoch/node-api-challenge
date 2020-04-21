@@ -49,7 +49,6 @@ router.delete('/:id', async (req, res, next) => {
 })
 
 function validateProject(req, res, next) {
-  console.log(req.body.project_id)
   projects.get(req.body.project_id).then((res) => {
     if (res === null) {
       res.status(400).json({
